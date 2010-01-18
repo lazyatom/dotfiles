@@ -8,6 +8,7 @@ source ~/.dotfiles/zsh/prompt.zsh
 source ~/.dotfiles/zsh/title.zsh
 source ~/.dotfiles/zsh/misc.zsh
 source ~/.dotfiles/zsh/history.zsh
+source ~/.dotfiles/zsh/aliases.zsh
 
 autoload -U ~/.dotfiles/zsh/functions/*(:t)
 
