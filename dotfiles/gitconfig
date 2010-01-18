@@ -1,21 +1,30 @@
 [user]
-	name = Tom Ward
-	email = tom@popdog.net
-[core]
-	excludesfile = ~/.gitignore
+  name = James Adam
+  email = james@lazyatom.com
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
+  status = auto
+  diff = auto
+  branch = auto
+  interactive = auto
 [alias]
-	amend = commit --amend
+  amend = commit --amend
   squash = rebase --interactive
   unadd = reset HEAD
-  co = checkout
-  aa = add -A
   st = status
-  ps = push
-  pl = pull
-[gui]
-	recentrepo = /Users/tomw/Projects/tagmap
+  ci = commit
+  co = checkout
+  br = branch
+  ca = commit -a
+  logl = log --graph --pretty=oneline --abbrev-commit
+  lc = log ORIG_HEAD.. --stat --no-merges
+[merge]
+  tool = opendiff
+[core]
+  legacyheaders = false
+  excludesfile = /Users/james/.gitignore
+[repack]
+  usedeltabaseoffset = true
+[branch]
+  autosetupmerge = true
+[github]
+  user = lazyatom

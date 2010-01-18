@@ -1,5 +1,4 @@
 # OS X specific settings
-
 export PATH=~/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 export SVN_EDITOR='mate -w'
 export GIT_EDITOR='mate -wl1'
@@ -23,3 +22,7 @@ localhost() {
 }
 
 ulimit -n 4096
+
+# Mac defaults for apps
+defaults write com.apple.RemoteDesktop DoNotSendSystemKeys -bool YES
+defaults write com.macromates.textmate OakDefaultLanguage E00B62AC-6B1C-11D9-9B1F-000D93589AF6
