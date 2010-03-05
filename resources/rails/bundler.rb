@@ -1,56 +1,56 @@
-inside 'gems/bundler' do  
-  run 'git init'
-  run 'git pull --depth 1 git://github.com/wycats/bundler.git' 
-  run 'rm -rf .git .gitignore'
-end
-
-file 'script/bundle', %{
-#!/usr/bin/env ruby
-$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), "..", "gems/bundler/lib"))
-require 'rubygems'
-require 'rubygems/command'
-require 'bundler'
-require 'bundler/commands/bundle_command'
-Gem::Commands::BundleCommand.new.invoke(*ARGV)
-}.strip
-
-run 'chmod +x script/bundle'
-
 file 'Gemfile', %{
-clear_sources
-source 'http://gemcutter.org'
-source 'http://gems.github.com'  
-
-disable_system_gems
-
-bundle_path 'gems'
+source 'http://rubygems.org'
 
 gem 'rails', '#{Rails::VERSION::STRING}'
-gem 'ruby-debug', :except => 'production'
+
+group :development do
+  gem 'ruby-debug'
+end
 }.strip
-  
-append_file '.gitignore', %{
-gems/*
-!gems/cache
-!gems/bundler}
 
-run 'script/bundle'
-
-append_file '/config/preinitializer.rb', %{
-require File.expand_path(File.join(File.dirname(__FILE__), "..", "gems", "environment"))
+append_file '/.gitignore', %{
+/.bundle
 }
-
-gsub_file 'config/environment.rb', "require File.join(File.dirname(__FILE__), 'boot')", %{
-require File.join(File.dirname(__FILE__), 'boot')
-
-# Hijack rails initializer to load the bundler gem environment before loading the rails environment.
-
-Rails::Initializer.module_eval do
-  alias load_environment_without_bundler load_environment
   
-  def load_environment
-    Bundler.require_env configuration.environment
-    load_environment_without_bundler
+append_file '/config/preinitializer.rb', %{
+begin
+  # Require the preresolved locked set of gems.
+  require File.expand_path('../../.bundle/environment', __FILE__)
+rescue LoadError
+  # Fallback on doing the resolve at runtime.
+  require "rubygems"
+  require "bundler"
+  if Bundler::VERSION <= "0.9.5"
+    raise RuntimeError, "Bundler incompatible.\n" +
+      "Your bundler version is incompatible with Rails 2.3 and an unlocked bundle.\n" +
+      "Run `gem install bundler` to upgrade or `bundle lock` to lock."
+  else
+    Bundler.setup
   end
 end
+}.strip
+
+gsub_file 'config/boot.rb', "Rails.boot!", %{
+
+class Rails::Boot
+ def run
+   load_initializer
+   extend_environment
+   Rails::Initializer.run(:set_load_path)
+ end
+
+ def extend_environment
+   Rails::Initializer.class_eval do
+     old_load = instance_method(:load_environment)
+     define_method(:load_environment) do
+       Bundler.require :default, Rails.env
+       old_load.bind(self).call
+     end
+   end
+ end
+end
+
+Rails.boot!
 }
+
+run 'bundle install'

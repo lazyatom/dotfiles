@@ -1,7 +1,5 @@
 system_name=`uname -a`
 
-source ~/.dotfiles/zsh/env.zsh
-
 fpath=(~/.dotfiles/zsh/functions $fpath)
 
 source ~/.dotfiles/zsh/prompt.zsh
@@ -12,13 +10,13 @@ source ~/.dotfiles/zsh/aliases.zsh
 
 autoload -U ~/.dotfiles/zsh/functions/*(:t)
 
-alias ruby="ruby_or_irb"
-alias rails="rails -m ~/.dotfiles/resources/rails-template.rb"
-
 setopt LOCAL_OPTIONS # allow functions to have local options
 setopt LOCAL_TRAPS # allow functions to have local traps
 
-cdpath=(~ ~/Projects/apps ~/Projects/tools ~/Projects/plugins ~/Projects/sites)
+alias g='git'
+alias fr='freerange'
+
+cdpath=(~ ~/Projects/apps ~/Projects/tools ~/Projects/plugins ~/Projects/sites ~/Projects/freerange)
 
 setopt autopushd # Use pushd for all directory changing
 

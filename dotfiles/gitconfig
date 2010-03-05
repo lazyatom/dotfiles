@@ -28,3 +28,6 @@
   autosetupmerge = true
 [github]
   user = lazyatom
+  ps = push
+  pl = pull
+  waa = "!sh -c 'git diff -- \"$@\" | git apply --cached --whitespace=fix; git checkout -- ${1-.} \"$@\"' -"

@@ -1,8 +1,8 @@
 # OS X specific settings
-export PATH=~/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=~/.homebrew/bin:~/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 export SVN_EDITOR='mate -w'
 export GIT_EDITOR='mate -wl1'
-export EDITOR='mate -w'
+export EDITOR='mate'
 export GEM_OPEN_EDITOR='mate'
 export LESSEDIT='mate -l %lm %f'
 
@@ -21,8 +21,14 @@ localhost() {
   echo "Added $1 at address 127.0.0.1"
 }
 
-ulimit -n 4096
-
 # Mac defaults for apps
 defaults write com.apple.RemoteDesktop DoNotSendSystemKeys -bool YES
 defaults write com.macromates.textmate OakDefaultLanguage E00B62AC-6B1C-11D9-9B1F-000D93589AF6
+
+case $OSTYPE in
+  darwin10*)
+		export ARCHFLAGS="-arch x86_64"
+  ;;;
+esac
+
+ulimit -n 4096
