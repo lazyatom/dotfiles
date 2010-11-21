@@ -1,6 +1,6 @@
 RIPDIR=~/.rip
 RUBYLIB="$RUBYLIB:$RIPDIR/active/lib"
-PATH="$HOME/bin:$RIPDIR/active/bin:$HOME/.bundle/ruby/1.8/bin:$PATH"
+PATH="$HOME/.homebrew/share/npm/bin:$HOME/bin:$RIPDIR/active/bin:$HOME/.bundle/ruby/1.8/bin:$PATH"
 export RIPDIR RUBYLIB PATH
 
 # GPG
