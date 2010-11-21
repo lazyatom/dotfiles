@@ -1,2 +1,9 @@
 # Steps to be performed for any interactive shell
-cd ~/Code
+case $system_name in
+  Darwin*)
+    cd ~/Code
+    ;;
+  *)
+    cd /var/apps
+    ;;;
+esac
