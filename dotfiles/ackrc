@@ -1,1 +1,2 @@
---type-add=ruby=.haml,.rake
+--type-add=ruby=.haml,.rake,.ru
+--type-add=shell=.pp,.feature
