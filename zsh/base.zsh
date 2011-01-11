@@ -2,7 +2,6 @@ system_name=`uname -a`
 
 fpath=(~/.dotfiles/zsh/functions $fpath)
 
-source ~/.dotfiles/zsh/env.zsh
 source ~/.dotfiles/zsh/prompt.zsh
 source ~/.dotfiles/zsh/title.zsh
 source ~/.dotfiles/zsh/misc.zsh
