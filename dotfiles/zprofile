@@ -1,6 +1,6 @@
 # Steps to be performed for any interactive shell
 case $OSTYPE in
-  darwin10*)
+  darwin*)
     cd ~/Code
     ;;
   *)

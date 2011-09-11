@@ -12,6 +12,11 @@ class Object
   def local_methods(obj = self)
     (obj.methods - obj.class.superclass.instance_methods).sort
   end
+
+  def __edit_method(method_name, object=self)
+    method = object.method(method_name.to_sym)
+    `open txmt://open?url=file://#{method.__file__}&line=#{method.__line__}`
+  end
 end
 
 railsrc = "~/.railsrc"

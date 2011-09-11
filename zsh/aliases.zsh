@@ -4,3 +4,10 @@ alias engines="ssh engines@rails-engines.org"
 alias dust="ssh dust@lazyatom.com"
 alias spillr="ssh -p 2222 lazyatom@france.illanti.com"
 alias gh="github"
+
+alias bi="bundle install"
+
+alias rake='be rake'
+alias cap='be cap'
+alias rspec='be rspec'
+alias rackup='be rackup'

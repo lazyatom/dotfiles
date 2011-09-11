@@ -2,3 +2,5 @@
 .DS\_Store
 .svn
 *.sqlite3
+.powenv
+*.rbc

@@ -1,5 +1,5 @@
 [user]
-  name = James Adam
+	name = James Adam
   email = james@lazyatom.com
 [color]
   status = auto
@@ -17,11 +17,14 @@
   ca = commit -a
   logl = log --graph --pretty=oneline --abbrev-commit
   lc = log ORIG_HEAD.. --stat --no-merges
+  lol = log --graph --pretty=format:'%C(red)%h%C(reset) %C(yellow)%d%C(reset) %s %C(green)%an %C(bold black)%cr%C(reset)' --abbrev-commit --date=relative
 [merge]
   tool = opendiff
 [core]
   legacyheaders = false
   excludesfile = /Users/james/.gitignore
+[apply]
+  whitespace=fix
 [repack]
   usedeltabaseoffset = true
 [branch]

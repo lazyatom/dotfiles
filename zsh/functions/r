@@ -1,0 +1,5 @@
+if [[ -a script/rails ]]; then
+  bundle exec rake $*
+else
+  rake $*
+fi
