@@ -1,8 +1,7 @@
 # OS X specific settings
-export PATH=~/.homebrew/bin:~/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 export SVN_EDITOR='mate -w'
 export GIT_EDITOR='mate -wl1'
-export EDITOR='mate'
+export EDITOR='mate -w'
 export GEM_OPEN_EDITOR='mate'
 export LESSEDIT='mate -l %lm %f'
 
