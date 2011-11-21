@@ -23,6 +23,7 @@ localhost() {
 # Mac defaults for apps
 defaults write com.apple.RemoteDesktop DoNotSendSystemKeys -bool YES
 defaults write com.macromates.textmate OakDefaultLanguage E00B62AC-6B1C-11D9-9B1F-000D93589AF6
+. ~/.dotfiles/zsh/osx/textmate.zsh
 
 case $OSTYPE in
   darwin10*)
