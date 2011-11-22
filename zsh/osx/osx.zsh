@@ -1,4 +1,5 @@
 # OS X specific settings
+export PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 export SVN_EDITOR='mate -w'
 export GIT_EDITOR='mate -wl1'
 export EDITOR='mate -w'

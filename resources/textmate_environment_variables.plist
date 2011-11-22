@@ -16,7 +16,7 @@
 		<key>variable</key>
 		<string>PATH</string>
 		<key>value</key>
-		<string>/usr/bin:/bin:/usr/sbin:/sbin</string>
+		<string>/Users/james/.rbenv/shims:/Users/james/.homebrew/sbin:/Users/james/.homebrew/bin:/Users/james/.homebrew/share/npm/bin:/Users/james/bin:/Users/james/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin</string>
 	</dict>
 	<dict>
 		<key>enabled</key>
@@ -33,14 +33,6 @@
 		<string>RUBYLIB</string>
 		<key>value</key>
 		<string>.:spec:test</string>
-	</dict>
-	<dict>
-		<key>enabled</key>
-		<string>1</string>
-		<key>variable</key>
-		<string>PATH</string>
-		<key>value</key>
-		<string>/Users/james/.rbenv/shims:/Users/james/.homebrew/sbin:/Users/james/.homebrew/bin:/Users/james/.homebrew/share/npm/bin:/Users/james/bin:/Users/james/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/local/bin:/opt/local/sbin</string>
 	</dict>
 </array>
 </plist>

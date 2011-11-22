@@ -7,9 +7,9 @@ alias gh="github"
 
 alias bi="bundle install"
 
+alias rails='be rails'
 alias rake='be rake'
 alias cap='be cap'
 alias rspec='be rspec'
 alias rackup='be rackup'
-alias rails='be rails'
 alias cucumber='be cucumber'
