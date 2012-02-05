@@ -1,4 +1,8 @@
---type-add=ruby=.haml,.rake,.ru
---type-add=shell=.pp,.feature,.snip,.scss
+--type-add=ruby=.rake,.ru,Gemfile,Rakefile,Procfile
+--type-add=css=.scss
+--type-set=haml=.haml
+--type-set=cucumber=.feature
+--type-set=puppet=.pp
+--type-set=snip=.snip
 --type-set=bin=.rdb
 --nobin
