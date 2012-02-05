@@ -1,9 +1,6 @@
-RIPDIR="~/.rip"
-RUBYLIB="$RUBYLIB:$RIPDIR/active/lib"
-RBENVDIR="$HOME/.rbenv"
-PATH=":$HOME/.homebrew/share/npm/bin:$HOME/bin:$RBENVDIR/bin:$PATH"
-NODE_PATH="/Users/james/.homebrew/lib/node"
-export RIPDIR RUBYLIB PATH NODE_PATH RBENVDIR
+export RBENVDIR="$HOME/.rbenv"
+export PATH=".bundle/bin:$RBENVDIR/bin:$HOME/.homebrew/share/npm/bin:$HOME/bin:$PATH"
+export NODE_PATH="/Users/james/.homebrew/lib/node"
 
 # GPG
 if [ -f ~/.gpg-agent-info ]; then
