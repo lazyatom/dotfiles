@@ -40,7 +40,11 @@ function lazyatom_git_prompt_info() {
       remote="%{$fg[yellow]%}"
     ;;;
   esac
-  echo " %{$fg[yellow]%}${branch#refs/heads/}${state}${remote}$(git_pair_info)"
+
+  branch_separator=" "
+  # branch_separator="%{$fg[yellow]%}\033[01m|\033[00m"
+
+  echo "${branch_separator}%{$fg[yellow]%}${branch#refs/heads/}${state}${remote}$(git_pair_info)"
 }
 
 git_pair_info() {
