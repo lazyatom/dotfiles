@@ -7,9 +7,9 @@ function prompt_lazyatom_precmd() {
   prompt="%{$fg[light_gray]%}%c%{$fg[yellow]%}$(lazyatom_git_prompt_info)%{$fg[white]%}"
   if test $previous_return_value -eq 0
   then
-    export PROMPT="%{$fg[green]%}➜  %{$fg[white]%}${prompt}%{$fg[green]%} $%{$fg[white]%} "
+    export PROMPT="%{$fg[green]%}➜ %{$fg[white]%}${prompt}%{$fg[green]%} $%{$fg[white]%} "
   else
-    export PROMPT="%{$fg[red]%}➜  %{$fg[white]%}${prompt}%{$fg[red]%} $%{$fg[white]%} "
+    export PROMPT="%{$fg[red]%}➜ %{$fg[white]%}${prompt}%{$fg[red]%} $%{$fg[white]%} "
   fi
 }
 
@@ -29,18 +29,18 @@ function lazyatom_git_prompt_info() {
   remote=""
   case $git_status in
     *Your\ branch\ is\ ahead*)
-      remote="%{$fg[yellow]%}↑"
+      remote="%{$fg[yellow]%}⇡"
     ;;;
     
     *Your\ branch\ is\ behind*)
-      remote="%{$fg[yellow]%}↓"
+      remote="%{$fg[yellow]%}⇣"
     ;;;
     
     "Your branch and")
       remote="%{$fg[yellow]%}"
     ;;;
   esac
-  echo " %{$fg[yellow]%}(${branch#refs/heads/})${remote}${state}$(git_pair_info)"
+  echo " %{$fg[yellow]%}${branch#refs/heads/}${state}${remote}$(git_pair_info)"
 }
 
 git_pair_info() {
