@@ -7,9 +7,9 @@ function prompt_lazyatom_precmd() {
   prompt="%{$fg[light_gray]%}%c%{$fg[yellow]%}$(lazyatom_git_prompt_info)%{$fg[white]%}"
   if test $previous_return_value -eq 0
   then
-    export PROMPT="%{$fg[green]%}➜ %{$fg[white]%}${prompt}%{$fg[green]%} $%{$fg[white]%} "
+    export PROMPT="$(host_prompt_color)$(host_prompt_start) %{$fg[white]%}${prompt}%{$fg[green]%} $%{$fg[white]%} "
   else
-    export PROMPT="%{$fg[red]%}➜ %{$fg[white]%}${prompt}%{$fg[red]%} $%{$fg[white]%} "
+    export PROMPT="%{$fg[red]%}$(host_prompt_start) %{$fg[white]%}${prompt}%{$fg[red]%} $%{$fg[white]%} "
   fi
 }
 
@@ -25,17 +25,17 @@ function lazyatom_git_prompt_info() {
       state="%{$fg[red]%}⚡"
     ;;;
   esac
-  
+
   remote=""
   case $git_status in
     *Your\ branch\ is\ ahead*)
       remote="%{$fg[yellow]%}⇡"
     ;;;
-    
+
     *Your\ branch\ is\ behind*)
       remote="%{$fg[yellow]%}⇣"
     ;;;
-    
+
     "Your branch and")
       remote="%{$fg[yellow]%}"
     ;;;
@@ -48,6 +48,28 @@ git_pair_info() {
   case ${pair} in
     [a-z]*)
       echo "%{$fg[blue]%}‣${pair}"
+    ;;;
+  esac
+}
+
+host_prompt_start() {
+  case ${SSH_CLIENT} in
+    [0-9]*)
+      echo "❯➜"
+    ;;;
+    *)
+      echo "➜"
+    ;;;
+  esac
+}
+
+host_prompt_color() {
+  case ${SSH_CLIENT} in
+    [0-9]*)
+      echo "%{$fg[blue]%}"
+    ;;;
+    *)
+      echo "%{$fg[green]%}"
     ;;;
   esac
 }
