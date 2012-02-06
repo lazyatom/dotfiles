@@ -69,7 +69,7 @@ host_prompt_start() {
 
 host_prompt_color() {
   case ${SSH_CLIENT} in
-    [0-9]*)
+    [0-9a-f]*)
       echo "%{$fg[blue]%}"
     ;;;
     *)
