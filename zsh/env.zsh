@@ -22,3 +22,7 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 if [ -f ~/.amazonrc ]; then
   source ~/.amazonrc
 fi
+
+# Print time details for long-running commands
+# See http://nuclearsquid.com/writings/reporttime-in-zsh/
+export REPORTTIME=10
