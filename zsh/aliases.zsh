@@ -15,4 +15,4 @@ alias rspec='be rspec'
 alias rackup='be rackup'
 alias cucumber='be cucumber'
 
-alias become="sudo su -c bash -l"
+alias become="sudo su -c 'cd app && bash' -l"
