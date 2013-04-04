@@ -5,6 +5,7 @@ alias dust="ssh dust@lazyatom.com"
 alias spillr="ssh -p 2222 lazyatom@france.illanti.com"
 alias gh="github"
 
+alias e="subl -n ."
 alias bi="bundle install --path .bundle/gems --binstubs .bundle/bin"
 
 alias rails='be rails'
