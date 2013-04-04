@@ -1,6 +1,6 @@
 [user]
 	name = James Adam
-  email = james@lazyatom.com
+	email = james@lazyatom.com
 [color]
   status = auto
   diff = auto
