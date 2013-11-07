@@ -16,7 +16,7 @@ setopt LOCAL_TRAPS # allow functions to have local traps
 alias g='git'
 alias fr='freerange'
 
-cdpath=(~ ~/Code/freerange ~/Code/lazyatom)
+cdpath=(~ ~/Code/freerange ~/Code/lazyatom ~/Code/exciting)
 
 setopt autopushd # Use pushd for all directory changing
 
