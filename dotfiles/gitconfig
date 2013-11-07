@@ -38,3 +38,12 @@
   user = lazyatom
 [push]
 	default = tracking
+[git-pair]
+	pattern = pairing+%name+%name@futurelearn.com
+	authors = chrisroos <chris@seagul.co.uk>
+	authors = floehopper <james@floehopper.org>
+	authors = lazyatom <james@lazyatom.com>
+	authors = sebjacobs <me@sebjacobs.com>
+	authors = tomafro <tom@popdog.net>
+	authors = tomtt <github@tomtenthij.nl>
+	authors = mseckington <mseckington@gmail.com>
