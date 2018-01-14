@@ -6,3 +6,7 @@
 --type-set=snip=.snip
 --type-set=bin=.rdb
 --nobin
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=.bundle
+--ignore-dir=coverage
