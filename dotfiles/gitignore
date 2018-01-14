@@ -4,3 +4,9 @@
 *.sqlite3
 .powenv
 *.rbc
+.*.swp
+*~
+.vim-session
+TAGS
+.dir-locals.el
+.#*
