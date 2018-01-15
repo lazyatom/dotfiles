@@ -10,6 +10,8 @@
   amend = commit --amend
   squash = rebase --interactive
   unadd = reset HEAD
+  commit = commit -v
+  since = !git log $(git merge-base --fork-point master)..HEAD
   st = status
   ci = commit
   co = checkout
@@ -23,6 +25,9 @@
   lol = log --graph --pretty=format:'%C(red)%h%C(reset) %C(yellow)%d%C(reset) %s %C(green)%an %C(bold black)%cr%C(reset)' --abbrev-commit --date=relative
   ribbon = tag --force _ribbon origin/master
   catchup = log --patch --reverse --topo-order _ribbon..origin/master
+  clean-branches = "!git branch --merged master | grep -v \"\\* master\" | xargs -n 1 git branch -d"
+  recent-branches="!git branch --sort=-committerdate | head -10"
+	upstream = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
 [merge]
   tool = opendiff
 [core]
@@ -47,3 +52,31 @@
 	authors = tomafro <tom@popdog.net>
 	authors = tomtt <github@tomtenthij.nl>
 	authors = mseckington <mseckington@gmail.com>
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+ [rebase]
+   autosquash = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[rerere]
+	enabled = true
+[credential]
+	helper = osxkeychain
+[diff]
+	compactionHeuristic = true
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[interactive]
+	diffFilter = diff-highlight
+[magit]
+	hideCampaign = true
