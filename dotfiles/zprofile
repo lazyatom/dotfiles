@@ -1,6 +1,9 @@
 # Steps to be performed for any interactive shell
-case $OSTYPE in
-  darwin*)
-    cd ~/Code
-    ;;;
-esac
+# case $OSTYPE in
+#   darwin*)
+#     cd ~/Code
+#     ;;
+#   *)
+#     cd /var/apps
+#     ;;;
+# esac
