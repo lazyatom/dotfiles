@@ -26,3 +26,6 @@ case $OSTYPE in
 esac
 
 ulimit -n 4096
+
+# Set Chef username for MUBI
+export CHEF_USERNAME=lazyatom
