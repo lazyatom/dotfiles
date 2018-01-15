@@ -26,3 +26,4 @@ fi
 # Print time details for long-running commands
 # See http://nuclearsquid.com/writings/reporttime-in-zsh/
 export REPORTTIME=10
+export FZF_DEFAULT_COMMAND='ag -g ""'
