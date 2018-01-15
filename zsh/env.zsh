@@ -11,11 +11,6 @@ fi
 if [ -s /usr/local/share/chruby/chruby.sh ] ; then source '/usr/local/share/chruby/chruby.sh'; fi
 if [ -s /usr/local/share/chruby/auto.sh ] ; then source '/usr/local/share/chruby/auto.sh'; fi
 
-# Pratik's recommended ruby performance settings
-export RUBY_HEAP_MIN_SLOTS=500000
-export RUBY_HEAP_SLOTS_INCREMENT=250000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=50000000
 
 if [ -f ~/.amazonrc ]; then
   source ~/.amazonrc
