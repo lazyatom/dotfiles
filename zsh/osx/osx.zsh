@@ -1,6 +1,6 @@
 # OS X specific settings
 export EDITOR='emacsclient'
-export VISUAL=$EDITOR
+export VISUAL="$EDITOR -n"
 export GUI_EDITOR=$VISUAL
 export GEM_OPEN_EDITOR=$GUI_EDITOR
 export BUNDLER_EDITOR=$GUI_EDITOR
