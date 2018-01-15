@@ -11,6 +11,10 @@ fi
 if [ -s /usr/local/share/chruby/chruby.sh ] ; then source '/usr/local/share/chruby/chruby.sh'; fi
 if [ -s /usr/local/share/chruby/auto.sh ] ; then source '/usr/local/share/chruby/auto.sh'; fi
 
+# Boot nvm
+export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+export PATH="bin:.bundle/bin:node_modules/.bin:$PATH"
 
 if [ -f ~/.amazonrc ]; then
   source ~/.amazonrc
