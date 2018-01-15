@@ -1,10 +1,13 @@
 # OS X specific settings
-export SVN_EDITOR='subl -w'
-export GIT_EDITOR='subl -wl1'
-export EDITOR='subl'
-export GEM_OPEN_EDITOR='subl'
-export BUNDLER_EDITOR='subl'
-export LESSEDIT='subl -l %lm %f'
+export EDITOR='emacsclient'
+export VISUAL=$EDITOR
+export GUI_EDITOR=$VISUAL
+export GEM_OPEN_EDITOR=$GUI_EDITOR
+export BUNDLER_EDITOR=$GUI_EDITOR
+export VIM_EDITOR="nvim +star -c ':0'"
+export SVN_EDITOR=$VIM_EDITOR
+export GIT_EDITOR=$VIM_EDITOR
+export LESSEDIT='vim -l %lm %f'
 
 # Use OS X version of SSH with agent forwarding
 alias ssh='/usr/bin/ssh -A'
