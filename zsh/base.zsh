@@ -13,7 +13,7 @@ autoload -U ~/.dotfiles/zsh/functions/*(:t)
 setopt LOCAL_OPTIONS # allow functions to have local options
 setopt LOCAL_TRAPS # allow functions to have local traps
 
-cdpath=(~ ~/Code/freerange ~/Code/lazyatom ~/Code/exciting)
+cdpath=(~ ~/Code/freerange ~/Code/lazyatom ~/Code/exciting ~/Code/mubi)
 
 setopt autopushd # Use pushd for all directory changing
 
