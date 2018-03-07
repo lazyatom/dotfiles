@@ -355,6 +355,7 @@ you should place your code here."
 
   ;; When saving using cmd-s, exit back into normal mode so that other vim-ish commands just work
   (global-set-key (kbd "s-s") (lambda nil (interactive) (evil-force-normal-state) (call-interactively (key-binding ""))))
+  (evil-define-key 'normal 'global (kbd "s-t") 'helm-projectile-find-file)
 
   ;; Include underscore in word movement commands for Evil mode
   (dolist (mode-hook '(ruby-mode-hook python-mode-hook js2-mode-hook haml-mode-hook web-mode-hook))
