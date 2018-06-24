@@ -16,3 +16,4 @@ alias rackup='be rackup'
 alias cucumber='be cucumber'
 
 alias become="sudo su -c 'cd app && bash' -l"
+alias dokku="sudo dokku"
