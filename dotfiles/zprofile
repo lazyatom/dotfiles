@@ -2,8 +2,5 @@
 case $OSTYPE in
   darwin*)
     cd ~/Code
-    ;;
-  *)
-    cd /var/apps
     ;;;
 esac
