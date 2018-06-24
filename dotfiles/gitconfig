@@ -41,6 +41,7 @@
   autosetupmerge = true
 [github]
   user = lazyatom
+	oauth-token =
 [push]
 	default = tracking
 [git-pair]
