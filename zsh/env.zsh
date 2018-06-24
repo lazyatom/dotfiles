@@ -25,16 +25,18 @@ fi
 export REPORTTIME=10
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-save_function()
-{
-  local ORIG_FUNC="$(declare -f $1)"
-  local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
-  eval "$NEWNAME_FUNC"
-}
+if [ -s /usr/local/share/chruby/chruby.sh ] ; then
+  save_function()
+  {
+    local ORIG_FUNC="$(declare -f $1)"
+    local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
+    eval "$NEWNAME_FUNC"
+  };
 
-save_function chruby old_chruby
+  save_function chruby old_chruby;
 
-chruby() {
-  old_chruby $*
-  PATH=bin:.bundle/bin:$PATH
-}
+  chruby() {
+    old_chruby $*
+    PATH=bin:.bundle/bin:$PATH
+  };
+fi;
