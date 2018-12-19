@@ -1,5 +1,5 @@
 export RBENVDIR="$HOME/.rbenv"
-export PATH=".bundle/bin:$RBENVDIR/bin:$HOME/.homebrew/share/npm/bin:$HOME/bin:$PATH"
+export PATH=".bundle/bin:$RBENVDIR/bin:$HOME/.homebrew/share/npm/bin:$HOME/bin:/usr/local/sbin:$PATH"
 export NODE_PATH="/Users/james/.homebrew/lib/node"
 
 # GPG
