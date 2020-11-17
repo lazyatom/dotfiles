@@ -1,0 +1,1 @@
+open "http://`docker-machine ip default`:`docker port $* | cut -d ':' -f 2`"

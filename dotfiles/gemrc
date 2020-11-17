@@ -7,4 +7,4 @@ gemcutter_key: e00117331e12035afa14a9797018c19f
 :update_sources: true
 :backtrace: false
 :sources:
-- http://gemcutter.org/
+- https://rubygems.org/

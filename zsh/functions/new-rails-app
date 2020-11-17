@@ -1,0 +1,8 @@
+mkdir $1
+cd $1
+echo "source 'https://rubygems.org'\n\ngem 'rails'" > Gemfile
+chruby | tail -1 | ruby -e 'print ARGF.read.split("-").last' > .ruby-version
+chruby
+echo `ruby -v`
+bundle install
+rails new . -f -d sqlite3 --skip-yarn --skip-javascript --skip-turbolinks --skip-active-storage

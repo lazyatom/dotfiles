@@ -44,3 +44,11 @@ if [ -s /usr/local/share/chruby/chruby.sh ] ; then
     PATH=bin:.bundle/bin:$PATH
   };
 fi;
+
+export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+
+# show test suite times when running Fivemat
+export FIVEMAT_PROFILE=1
+
+export VIMCONFIG=~/.vim
+export VIMDATA=~/.vim
