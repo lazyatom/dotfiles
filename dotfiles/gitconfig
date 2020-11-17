@@ -1,3 +1,5 @@
+[include]
+  path = "~/.gitconfig.private"
 [user]
 	name = James Adam
 	email = james@lazyatom.com
