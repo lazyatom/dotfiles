@@ -4,6 +4,8 @@ brew 'ruby-install'
 brew 'yarn'
 brew 'ripgrep'
 brew 'fish'
+brew 'fzf'
+brew 'git'
 
 # databases
 brew 'postgresql'
@@ -13,6 +15,30 @@ brew 'redis'
 
 # development libraries
 brew 'libxml2'
+brew 'zlib'
+brew 'ncurses'
+brew 'curl'
+
+# emacs dependencies
+brew 'texinfo'
+brew 'coreutils'
+brew 'expat'
+brew 'gcc'
+brew 'gmp'
+brew 'gnu-sed'
+brew 'gnutls'
+brew 'jansson'
+brew 'libffi'
+brew 'libgccjit'
+brew 'libiconv'
+brew 'librsvg'
+brew 'libtasn1'
+brew 'libunistring'
+brew 'little-cms2'
+brew 'mailutils'
+brew 'make'
+brew 'nettle'
+brew 'pkg-config'
 
 # development tools
 tap 'puma/puma'
