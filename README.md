@@ -37,9 +37,7 @@ Once at least `fish` is installed, run `install` in this repo to set up dotfiles
 
 `curl -L https://get.oh-my.fish | fish`
 
-Then
-
-`omf install bobthefish autojump fzf`
+This should then automatically install any packages required.
 
 ## Change terminal font to Hack Nerd Font Complete 14pt
 
