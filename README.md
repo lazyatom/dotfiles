@@ -39,6 +39,12 @@ Once at least `fish` is installed, run `install` in this repo to set up dotfiles
 
 This should then automatically install any packages required.
 
+## Install a patched version of chruby-fish
+
+`git clone git@github.com:bouk/chruby-fish.git`
+`git checkout rewrite-fish`
+`make install`
+
 ## Change terminal font to Hack Nerd Font Complete 14pt
 
 ## In apps:
