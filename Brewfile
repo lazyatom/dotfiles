@@ -71,7 +71,10 @@ cask 'transmit'
 cask 'transmission'
 cask 'skype'
 cask 'slack'
-cash 'hex-fiend'
+cask 'hex-fiend'
+cask 'daisydisk'
+cask 'backblaze'
+cask 'calibre'
 
 # Development tools
 cask 'ngrok'
