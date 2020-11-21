@@ -63,7 +63,8 @@ This should then automatically install any packages required.
 
 ``` sh
 mkdir -p ~/Code/forks
-git clone git@github.com:bouk/chruby-fish.git
+git clone git@github.com:bouk/chruby-fish.git ~/Code/forks/chruby-fish
+cd ~/Code/forks/chruby-fish
 git checkout rewrite-fish
 make install
 ```
@@ -82,7 +83,7 @@ Looks like the builds of emacs might _not_ be portable, so building them by hand
 git clone git@github.com:jimeh/build-emacs-for-macos.git ~/Code/forks/build-emacs-for-macos
 cd ~/Code/forks/build-emacs-for-macos
 brew bundle
-./build-emacs-for-macos --git-sha fd9e9308d27138a16e2e93417bd7ad4448fea40a feature/native-com
+./build-emacs-for-macos --git-sha fd9e9308d27138a16e2e93417bd7ad4448fea40a feature/native-comp
 ```
 
 This will take a while.
@@ -111,7 +112,7 @@ We use chemacs and doom. The configuration is installed earlier as part of the d
 
 ``` sh
 mkdir ~/.emacs-configs
-git clone git@hithub.com:hlissner/doom-emacs.git ~/.emacs-configs/doom
+git clone git@github.com:hlissner/doom-emacs.git ~/.emacs-configs/doom
 doom sync
 ```
 
