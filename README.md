@@ -1,37 +1,57 @@
 Getting going on a new machine
 
-## Transfer essentials from old machine
+## On old machine
 
-* ~/.ssh
+``` sh
+cd ~
+tar -czvf ssh.tar.gz .ssh
+```
 
-Ensure ~/.dotfiles is up to date
+Ensure ~/.dotfiles is up to date on the old machine
 
-## Homebrew (part one)
+## Install Homebrew
 
 Install homebrew using instructions from https://brew.sh
 
-## Sign in to App Store
+This makes the core dependencies (like git) available, via the Apple Developer Tools.
 
-While Homebrew is installing (this takes a while), sign in to the App Store. This is required for the brew bundkle step to work
+## Transfer essentials from old machine
 
-## Brew bundle
-
-Then use the included `Brewfile` to install core apps and dependencies
+``` sh
+tar xzvf ssh.tar.gz 
+```
 
 ## Clone this repo
 
-While the brew dependencies are installing, clone this repo
+We need to get this repo onto the machine. Clone using HTTPS -- we don't have the SSH keys in place yet.
 
-`git clone git@github.com:lazyatom/dotfiles.git ~/.dotfiles`
-`./dotfiles/install.sh`
+`git clone git@github.com/lazyatom/dotfiles.git ~/.dotfiles`
+
+## Brew bundle
+
+Then use the included `Brewfile` to install core apps and dependencies. This will take a while.
+
+When the bundle starts working from the App Store, it will fail if you haven't already signed in, so do that now too. You can quit the App Store after.
 
 ## Change user shell to fish
 
-Once at least fish is installed, use System Preferences / Users & Groups to change the shell of your user to `/usr/local/bin/fish`
+Once at least fish is installed, add it to the list of acceptable shells:
+
+``` sh
+echo `which fish` | sudo tee -a /etc/shells
+chsh -s `which fish`
+```
 
 ## Install dotfiles
 
-Once at least `fish` is installed, run `install` in this repo to set up dotfiles. You can test if this worked by opening a new Terminal tab or window.
+Once at least `fish` and `git` are installed, you can properly install the actual dotfiles
+
+``` sh
+cd ~/.dotfiles
+./install
+```
+
+This will symlink a bunch of configuration files
 
 ## Install Oh My Fish
 
@@ -41,9 +61,16 @@ This should then automatically install any packages required.
 
 ## Install a patched version of chruby-fish
 
-`git clone git@github.com:bouk/chruby-fish.git`
-`git checkout rewrite-fish`
-`make install`
+``` sh
+mkdir -p ~/Code/forks
+git clone git@github.com:bouk/chruby-fish.git
+git checkout rewrite-fish
+make install
+```
+
+## Install Backblaze
+
+Run Backblaze and inherit the previous system backup state.
 
 ## Change terminal font to Hack Nerd Font Complete 14pt
 
@@ -52,7 +79,6 @@ This should then automatically install any packages required.
 Looks like the builds of emacs might _not_ be portable, so building them by hand is required.
 
 ``` sh
-mkdir -p ~/Code/forks
 git clone git@github.com:jimeh/build-emacs-for-macos.git ~/Code/forks/build-emacs-for-macos
 cd ~/Code/forks/build-emacs-for-macos
 brew bundle
@@ -81,7 +107,7 @@ exec /Applications/Emacs.app/Contents/MacOS/bin/emacsclient $@
 
 ### Emacs configuration
 
-We use chemacs and doom principally. The configuration is installed earlier as part of the dotfiles, but we need to actually install doom itself.
+We use chemacs and doom. The configuration is installed earlier as part of the dotfiles, but we need to actually install doom itself.
 
 ``` sh
 mkdir ~/.emacs-configs
@@ -92,6 +118,15 @@ doom sync
 This may also take a while, to natively compile everything.
 
 After this, you should be able to run Emacs and see Doom.
+
+## 1Password
+
+Run the 1Password app, and log in to the 1Password.com account.
+
+## Dropbox
+
+Run the dropbox app, and log in
+
 
 ## In apps:
 
