@@ -4,7 +4,7 @@ Getting going on a new machine
 
 ``` sh
 cd ~
-tar -czvf ssh.tar.gz .ssh
+tar --exclude="bin/caddy" -czvf dotfiles.tar.gz .ssh .aws .bundle/config .chef .config/gh .editorconfig .gem/credentials .gitconfig.private .homebrew-token .gnupg .irb_history .netrc .npmrc .s3cfg .sem.yaml .ssb/secret .ssb/gossip.json .zhistory bin org lazyatom.ovpn
 ```
 
 Ensure ~/.dotfiles is up to date on the old machine
