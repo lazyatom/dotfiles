@@ -119,6 +119,10 @@ This may also take a while, to natively compile everything.
 
 After this, you should be able to run Emacs and see Doom.
 
+### Font installation
+
+The Doom modeline needs a font -- install it by running the `all-the-icons-install-font` function.
+
 ## 1Password
 
 Run the 1Password app, and log in to the 1Password.com account.
@@ -127,6 +131,37 @@ Run the 1Password app, and log in to the 1Password.com account.
 
 Run the dropbox app, and log in
 
+## MariaDB
+
+As of 10.4, the authentication set up by MariaDB is different. A user will be created with the same username as the unix account, but it won't be possible to authenticate that user over anything but the unix socket, which isn't super-useful for Rails when configuring databases using URLs.
+
+So instead, run this:
+
+``` sh
+brew services start mariadb
+mysql -e 'SET PASSWORD FOR "james"@"localhost" = PASSWORD("");'
+```
+
+After this, you should be able to connect to the database using Rails and Sequel Ace.
+
+## Compilation failures
+
+Some of the clang tooling in Big Sur [breaks gem builds by default](https://github.com/puma/puma/issues/2304#issuecomment-664448309). The fix is to ignore some warnings:
+
+``` sh
+bundle config build.bcrypt-ruby --with-cflags="-Wno-error=implicit-function-declaration"
+bundle config build.github-markdown --with-cflags="-Wno-error=implicit-function-declaration"
+bundle config build.puma --with-cflags="-Wno-error=implicit-function-declaration"
+bundle config build.pg --with-cflags="-Wno-error=implicit-function-declaration"
+```
+
+Similarly, some other things have issues compiling:
+
+#### vterm under Emacs
+
+To fix this, after compilation failed I had to edit the file at `~/.emacs-configs/doom/.local/straight/build-<dir>/vterm/build/libvterm-prefix/src/libvterm/Makefile`, changing the line that starts with `override CFLAGS` to include `-Wno-error=implicit-function-declaration`. 
+
+There might be a better way of fixing all these errors at once, but until then...
 
 ## In apps:
 
