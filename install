@@ -5,7 +5,7 @@ for found in ~/.dotfiles/dotfiles/*; do
 done
 
 mkdir -p ~/bin
-ln -s /usr/local/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
+ln -fs /usr/local/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
 
 mkdir -p ~/.config
 ln -s ~/.dotfiles/doom.d ~/.doom.d
