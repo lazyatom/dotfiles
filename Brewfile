@@ -43,6 +43,8 @@ brew 'editorconfig'
 brew 'telnet'
 brew 'curl'
 brew 'cmake'
+brew 'coreutils'
+brew 'fd'
 
 # Misc utilities
 cask 'the-unarchiver'
