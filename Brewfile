@@ -45,6 +45,7 @@ brew 'curl'
 brew 'cmake'
 brew 'coreutils'
 brew 'fd'
+brew 'wget'
 
 # Misc utilities
 cask 'the-unarchiver'
@@ -59,6 +60,7 @@ cask 'daisydisk'
 cask 'backblaze'
 cask 'calibre'
 cask 'whatsapp'
+cask 'discord'
 
 tap 'homebrew/cask-versions'
 

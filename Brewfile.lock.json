@@ -674,6 +674,31 @@
             }
           }
         }
+      },
+      "wget": {
+        "version": "1.20.3_2",
+        "bottle": {
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.big_sur.bottle.tar.gz",
+              "sha256": "c965fd423db73afdcce5ccde8af2783b5659ec2287bf02ae6a982fd6dcbd6292"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.catalina.bottle.tar.gz",
+              "sha256": "ef65c759c5097a36323fa9c77756468649e8d1980a3a4e05695c05e39568967c"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.mojave.bottle.tar.gz",
+              "sha256": "28f4090610946a4eb207df102d841de23ced0d06ba31cb79e040d883906dcd4f"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.high_sierra.bottle.tar.gz",
+              "sha256": "91dd0caca9bd3f38c439d5a7b6f68440c4274945615fae035ff0a369264b8a2f"
+            }
+          }
+        }
       }
     },
     "tap": {
@@ -843,6 +868,12 @@
         "options": {
           "full_name": "whatsapp"
         }
+      },
+      "discord": {
+        "version": "0.0.259",
+        "options": {
+          "full_name": "discord"
+        }
       }
     },
     "mas": {
@@ -889,7 +920,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "2.5.11-153-g6177db7",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "4282acba77d906b9a87655f1669a72de738d6c1f",
+        "Homebrew/homebrew-core": "bbe93208183854c37d610898611766f3da5c8341",
         "CLT": "12.2.0.0.1.1604076827",
         "Xcode": "12.0",
         "macOS": "11.0.1"
