@@ -1,7 +1,7 @@
 # core tools
+brew 'git'
 brew 'fish'
 brew 'autojump'
-brew 'git'
 brew 'chruby'
 brew 'ruby-install'
 brew 'yarn'
@@ -28,7 +28,6 @@ brew 'redis'
 brew 'libxml2'
 brew 'zlib'
 brew 'ncurses'
-brew 'curl'
 
 # development tools
 tap 'puma/puma'
@@ -41,6 +40,9 @@ brew 'youtube-dl'
 brew 'get_iplayer'
 brew 'jq'
 brew 'editorconfig'
+brew 'telnet'
+brew 'curl'
+brew 'cmake'
 
 # Misc utilities
 cask 'the-unarchiver'
@@ -54,6 +56,7 @@ cask 'hex-fiend'
 cask 'daisydisk'
 cask 'backblaze'
 cask 'calibre'
+cask 'whatsapp'
 
 tap 'homebrew/cask-versions'
 
