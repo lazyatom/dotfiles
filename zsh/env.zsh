@@ -1,5 +1,5 @@
 export RBENVDIR="$HOME/.rbenv"
-export PATH=".bundle/bin:$RBENVDIR/bin:$HOME/.homebrew/share/npm/bin:$HOME/bin:$PATH"
+export PATH=".bundle/bin:$RBENVDIR/bin:$HOME/.homebrew/share/npm/bin:$HOME/bin:/usr/local/sbin:$PATH"
 export NODE_PATH="/Users/james/.homebrew/lib/node"
 
 # GPG
@@ -20,21 +20,35 @@ if [ -f ~/.amazonrc ]; then
   source ~/.amazonrc
 fi
 
+if [ -f ~/.homebrew-token ]; then
+  export HOMEBREW_GITHUB_API_TOKEN=`cat ~/.homebrew-token`
+fi
+
 # Print time details for long-running commands
 # See http://nuclearsquid.com/writings/reporttime-in-zsh/
 export REPORTTIME=10
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-save_function()
-{
-  local ORIG_FUNC="$(declare -f $1)"
-  local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
-  eval "$NEWNAME_FUNC"
-}
+if [ -s /usr/local/share/chruby/chruby.sh ] ; then
+  save_function()
+  {
+    local ORIG_FUNC="$(declare -f $1)"
+    local NEWNAME_FUNC="$2${ORIG_FUNC#$1}"
+    eval "$NEWNAME_FUNC"
+  };
 
-save_function chruby old_chruby
+  save_function chruby old_chruby;
 
-chruby() {
-  old_chruby $*
-  PATH=bin:.bundle/bin:$PATH
-}
+  chruby() {
+    old_chruby $*
+    PATH=bin:.bundle/bin:$PATH
+  };
+fi;
+
+export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
+
+# show test suite times when running Fivemat
+export FIVEMAT_PROFILE=1
+
+export VIMCONFIG=~/.vim
+export VIMDATA=~/.vim

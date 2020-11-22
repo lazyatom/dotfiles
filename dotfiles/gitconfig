@@ -1,6 +1,9 @@
+[include]
+  path = "~/.gitconfig.private"
 [user]
 	name = James Adam
 	email = james@lazyatom.com
+	signingkey = 6B8BF7B544D7EC22
 [color]
   status = auto
   diff = auto
@@ -28,19 +31,19 @@
   clean-branches = "!git branch --merged master | grep -v \"\\* master\" | xargs -n 1 git branch -d"
   recent-branches="!git branch --sort=-committerdate | head -10"
 	upstream = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+	delete-merged = !git branch --merged master | egrep -v \"(^\\*|^  master$)\" | xargs git branch --delete
 [merge]
   tool = opendiff
 [core]
   legacyheaders = false
   excludesfile = /Users/james/.gitignore
+	attributesfile = /Users/james/.gitattributes
 [apply]
   whitespace=fix
 [repack]
   usedeltabaseoffset = true
 [branch]
   autosetupmerge = true
-[github]
-  user = lazyatom
 [push]
 	default = tracking
 [git-pair]
@@ -62,6 +65,7 @@
 	required = true
  [rebase]
    autosquash = true
+   autostash = true
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
@@ -80,3 +84,12 @@
 	diffFilter = diff-highlight
 [magit]
 	hideCampaign = true
+[magithub]
+	online = false
+	enabled = false
+[magithub "status"]
+	includeStatusHeader = true
+	includePullRequestsSection = false
+	includeIssuesSection = false
+[commit]
+	gpgsign = false

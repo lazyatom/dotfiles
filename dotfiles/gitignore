@@ -10,3 +10,5 @@
 TAGS
 .dir-locals.el
 .#*
+.#*
+.projectile

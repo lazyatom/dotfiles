@@ -1,6 +1,15 @@
 autoload colors; colors
 autoload -U add-zsh-hook
-add-zsh-hook precmd prompt_lazyatom_precmd
+
+if [[ "$TERM" == "dumb" ]]
+then
+  export PROMPT='$ '
+  unsetopt zle
+  PS1='$ '
+  return
+else
+  add-zsh-hook precmd prompt_lazyatom_precmd
+fi
 
 function prompt_lazyatom_precmd() {
   local previous_return_value=$?;

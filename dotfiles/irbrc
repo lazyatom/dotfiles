@@ -19,5 +19,44 @@ class Object
   end
 end
 
-railsrc = "~/.railsrc"
-load railsrc if $0 == 'irb' && ENV['RAILS_ENV']
+if defined? Rails
+  base_prompt = "%N(%m):%03n:%i"
+
+  app_env = Rails.env[0...4].upcase
+  env_prompt = if Rails.env.production?
+    puts "\n\e[1m\e[41mWARNING: YOU ARE USING RAILS CONSOLE IN PRODUCTION!\n" \
+        "Changing data can cause serious data loss.\n" \
+        "Make sure you know what you're doing.\e[0m\e[22m\n\n"
+    "\e[31m#{app_env}\e[0m #{base_prompt}" # red
+  elsif Rails.env.development?
+    base_prompt
+  else
+    "\e[33m#{app_env}\e[0m #{base_prompt}"
+  end
+
+  IRB.conf[:PROMPT][:RAILS] = {
+    PROMPT_I: "#{env_prompt}> ",
+    PROMPT_N: "#{env_prompt}> ",
+    PROMPT_S: "#{env_prompt}%l ",
+    PROMPT_C: "#{env_prompt}* ",
+    RETURN:   "=> %s\n"
+  }
+
+  IRB.conf[:PROMPT_MODE] = :RAILS
+
+  def sidekiq_run(queue = 'default')
+    job = Sidekiq::Queue.new(queue).first
+    if job
+      klass = job.klass.constantize
+      args = job.args
+      puts "Running #{klass} with %p" % args
+      klass.new.perform(*args)
+    end
+  end
+
+  if defined?(Mubi)
+    def me
+      User.find(74730)
+    end
+  end
+end

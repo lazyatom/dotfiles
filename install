@@ -4,5 +4,13 @@ for found in ~/.dotfiles/dotfiles/*; do
   ln -fs $found ~/.$found:t
 done
 
+mkdir -p ~/bin
+ln -fs /usr/local/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
+
+mkdir -p ~/.config
+ln -s ~/.dotfiles/doom.d ~/.doom.d
+ln -s ~/.dotfiles/fish ~/.config/fish
+ln -s ~/.dotfiles/omf ~/.config/omf
+
 # mkdir -p ~/.ssh 
 # ln -fs ~/.dotfiles/ssh/authorized_keys ~/.ssh/authorized_keys
