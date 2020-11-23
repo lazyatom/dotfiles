@@ -1,0 +1,26 @@
+#!/bin/sh
+
+cd ~
+tar -czvf backup.tar.gz \
+  .ssh \
+  .aws \
+  .bundle/config \
+  .chef \
+  .config/gh \
+  .editorconfig \
+  .gem/credentials \
+  .gitconfig.private \
+  .homebrew-token \
+  .gnupg \
+  .irb_history \
+  .netrc \
+  .npmrc \
+  .s3cfg \
+  .sem.yaml \
+  .ssb/secret \
+  .ssb/gossip.json \
+  .zhistory \
+  .local/share/fish/fish_history \
+  bin \
+  org \
+  *.ovpn

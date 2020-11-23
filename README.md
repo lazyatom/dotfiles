@@ -2,12 +2,19 @@ Getting going on a new machine
 
 ## On old machine
 
-``` sh
-cd ~
-tar --exclude="bin/caddy" -czvf dotfiles.tar.gz .ssh .aws .bundle/config .chef .config/gh .editorconfig .gem/credentials .gitconfig.private .homebrew-token .gnupg .irb_history .netrc .npmrc .s3cfg .sem.yaml .ssb/secret .ssb/gossip.json .zhistory bin org lazyatom.ovpn
-```
+Ensure ~/.dotfiles is up to date on the old machine.
 
-Ensure ~/.dotfiles is up to date on the old machine
+Then, create a backup of other misc files:
+
+``` sh
+cd ~/.dotfiles
+./backup
+```
+This will create a file, `backup.tar.gz`, in the home directory, which contains files and directories with sensitive information that isn't suitable for storing in a public repo like this one.
+
+Copy this file somewhere that the new machine can access it.
+
+Also ensure that any other files and directories are backed up -- particularly `~/Code`!
 
 ## Install Homebrew
 
@@ -17,19 +24,27 @@ This makes the core dependencies (like git) available, via the Apple Developer T
 
 ## Transfer essentials from old machine
 
+Restore the backup of sensitive information:
+
 ``` sh
-tar xzvf ssh.tar.gz 
+cd ~
+tar xzvf backup.tar.gz
 ```
 
 ## Clone this repo
 
-We need to get this repo onto the machine. Clone using HTTPS -- we don't have the SSH keys in place yet.
+We need to get this repo onto the machine. 
 
 `git clone git@github.com/lazyatom/dotfiles.git ~/.dotfiles`
 
 ## Brew bundle
 
 Then use the included `Brewfile` to install core apps and dependencies. This will take a while.
+
+``` sh
+cd ~/.dotfiles
+brew bundle
+```
 
 When the bundle starts working from the App Store, it will fail if you haven't already signed in, so do that now too. You can quit the App Store after.
 
