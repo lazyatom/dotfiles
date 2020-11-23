@@ -46,6 +46,7 @@ brew 'cmake'
 brew 'coreutils'
 brew 'fd'
 brew 'wget'
+brew 'caddy'
 
 # Misc utilities
 cask 'the-unarchiver'
