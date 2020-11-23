@@ -33,6 +33,8 @@ brew 'ncurses'
 tap 'puma/puma'
 brew 'puma-dev'
 brew 'tmux'
+brew 'caddy'
+brew 'tmuxinator'
 
 # misc tools
 brew 'ffmpeg'
@@ -46,7 +48,6 @@ brew 'cmake'
 brew 'coreutils'
 brew 'fd'
 brew 'wget'
-brew 'caddy'
 
 # Misc utilities
 cask 'the-unarchiver'

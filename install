@@ -11,6 +11,7 @@ mkdir -p ~/.config
 ln -s ~/.dotfiles/doom.d ~/.doom.d
 ln -s ~/.dotfiles/fish ~/.config/fish
 ln -s ~/.dotfiles/omf ~/.config/omf
+ln -s ~/.dotfiles/tmuxinator ~/.tmuxinator
 
 # mkdir -p ~/.ssh 
 # ln -fs ~/.dotfiles/ssh/authorized_keys ~/.ssh/authorized_keys
